@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A3A78C831BFD1E5C006E7C71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A78C821BFD1E5C006E7C71 /* AppDelegate.swift */; };
-		A3A78C851BFD1E5C006E7C71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A78C841BFD1E5C006E7C71 /* ViewController.swift */; };
 		A3A78C881BFD1E5C006E7C71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A78C861BFD1E5C006E7C71 /* Main.storyboard */; };
 		A3A78C8A1BFD1E5C006E7C71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3A78C891BFD1E5C006E7C71 /* Assets.xcassets */; };
 		A3A78C8D1BFD1E5C006E7C71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A78C8B1BFD1E5C006E7C71 /* LaunchScreen.storyboard */; };
+		A3A78C951BFD1F69006E7C71 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A78C941BFD1F69006E7C71 /* HomeViewController.swift */; };
+		A3A78C971BFD22BD006E7C71 /* WalletInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A78C961BFD22BD006E7C71 /* WalletInfoViewController.swift */; };
+		A3A78C991BFD36EB006E7C71 /* String+hmac.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A78C981BFD36EB006E7C71 /* String+hmac.swift */; };
 		A61F26828C005FE91E854DF8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C0D9769815D9C11CCC9273 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -21,11 +23,14 @@
 		7ED672BF244CB810726DA636 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A3A78C7F1BFD1E5C006E7C71 /* WalletGenApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletGenApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A78C821BFD1E5C006E7C71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A3A78C841BFD1E5C006E7C71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3A78C871BFD1E5C006E7C71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3A78C891BFD1E5C006E7C71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3A78C8C1BFD1E5C006E7C71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3A78C8E1BFD1E5C006E7C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3A78C941BFD1F69006E7C71 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A3A78C961BFD22BD006E7C71 /* WalletInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletInfoViewController.swift; sourceTree = "<group>"; };
+		A3A78C981BFD36EB006E7C71 /* String+hmac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+hmac.swift"; sourceTree = "<group>"; };
+		A3A78C9A1BFD3713006E7C71 /* WalletGenApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WalletGenApp-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +75,14 @@
 			isa = PBXGroup;
 			children = (
 				A3A78C821BFD1E5C006E7C71 /* AppDelegate.swift */,
-				A3A78C841BFD1E5C006E7C71 /* ViewController.swift */,
 				A3A78C861BFD1E5C006E7C71 /* Main.storyboard */,
 				A3A78C891BFD1E5C006E7C71 /* Assets.xcassets */,
 				A3A78C8B1BFD1E5C006E7C71 /* LaunchScreen.storyboard */,
 				A3A78C8E1BFD1E5C006E7C71 /* Info.plist */,
+				A3A78C941BFD1F69006E7C71 /* HomeViewController.swift */,
+				A3A78C961BFD22BD006E7C71 /* WalletInfoViewController.swift */,
+				A3A78C981BFD36EB006E7C71 /* String+hmac.swift */,
+				A3A78C9A1BFD3713006E7C71 /* WalletGenApp-Bridging-Header.h */,
 			);
 			path = WalletGenApp;
 			sourceTree = "<group>";
@@ -210,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3A78C851BFD1E5C006E7C71 /* ViewController.swift in Sources */,
 				A3A78C831BFD1E5C006E7C71 /* AppDelegate.swift in Sources */,
+				A3A78C971BFD22BD006E7C71 /* WalletInfoViewController.swift in Sources */,
+				A3A78C951BFD1F69006E7C71 /* HomeViewController.swift in Sources */,
+				A3A78C991BFD36EB006E7C71 /* String+hmac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +287,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -315,6 +326,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
