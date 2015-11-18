@@ -1,0 +1,10 @@
+*.xcbkptlist
+*.xcuserdatad
+*.xcuserstate
+*.xcsettings
+*/xcdebugger/**
+*/xcuserdata/**
+*/Pods/**
+*.xcbkptlist
+*.xcuserstate
+*.lock
