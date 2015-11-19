@@ -31,9 +31,9 @@ class WalletInfoCell : UICollectionViewCell {
         let totalBalances = wallet["totalBalances"] as! [String : Double]
         self.digitalCurrencyLabel.text = getLabel(currency)
         self.walletAddressLabel.text = depositAddresses[currency]
-        self.availableBalance.text = String(format: "%.f", arguments: [availableBalances[currency]!])
-        self.totalBalance.text = String(format: "%.f", arguments: [totalBalances[currency]!])
-        self.qrImage.image = Utilities.toQrImage("\(getUriPrefix(currency)):\(depositAddresses[currency])", height: self.qrImage.frame.size.height)
+        self.availableBalance.text = String(format: "%.8f", arguments: [availableBalances[currency]!])
+        self.totalBalance.text = String(format: "%.8f", arguments: [totalBalances[currency]!])
+        self.qrImage.image = Utilities.toQrImage("\(getUriPrefix(currency)):\(depositAddresses[currency]!)", height: self.qrImage.frame.size.height)
         self.linkButton.setTitle("\(getLookupUrl(currency))\(depositAddresses[currency]!)", forState: .Normal)
         self.linkButton.addTarget(self, action: Selector("onLookupButtonSelected:"), forControlEvents: .TouchDown)
     }
