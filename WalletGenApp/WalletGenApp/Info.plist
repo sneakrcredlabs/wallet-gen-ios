@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>SNAPCARD_API_KEY</key>
-	<string>vp1g2943k6aapc4ja0njkjdfkipl8t0s</string>
+	<string>uaduht1dbe8m8n46jk709eevsqncdneg</string>
 	<key>SNAPCARD_SECRET</key>
-	<string>opu9et05k555rm3lggisnrvhmpaqt4s7</string>
+	<string>6qf5jfs0n1hfr48a4h896m8b80bfgsgh</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -37,8 +37,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

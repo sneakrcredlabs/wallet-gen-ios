@@ -3,7 +3,10 @@ import Alamofire
 
 class HomeViewController : UICollectionViewController {
     
+    private let endpoint = "https://api.snapcard.io/v2/wallets"
+    
     var wallets = [[String : AnyObject]]()
+    
     
     // MARK: UICollectionViewController
     
@@ -11,6 +14,7 @@ class HomeViewController : UICollectionViewController {
         super.viewDidLoad()
     
         title = NSLocalizedString("Wallets", comment: "")
+        
         loadWallets()
     }
     
@@ -26,7 +30,7 @@ class HomeViewController : UICollectionViewController {
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.size.width, height: 60)
+        return CGSize(width: self.view.bounds.size.width, height: 40)
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -46,21 +50,22 @@ class HomeViewController : UICollectionViewController {
     // MARK: Networking
     
     private func createWallet(name : String) {
-        let endpoint = "https://api.snapcard.io/v2/wallets"
         let body = "{\"name\":\"\(name)\"}"
-        let url = "\(endpoint)?timestamp=\(createTimestamp())"
+        let url = "\(endpoint)?timestamp=\(Utilities.createTimestamp())"
         Alamofire.request(.POST, url,
             parameters: ["name":name],
             encoding: .JSON,
-            headers: getHeaders(url, body: body))
+            headers: Utilities.getHeaders(url, body: body))
             .validate()
             .responseJSON { response in
                 switch response.result {
                 case .Success:
                     if let apiResponse = response.result.value {
                         let newWallet = apiResponse as! [String : AnyObject]
-                        self.wallets.append(newWallet)
-                        self.collectionView!.insertItemsAtIndexPaths([NSIndexPath(forRow: self.wallets.count - 1, inSection: 0)])
+                        self.wallets.insert(newWallet, atIndex: 0)
+                        self.collectionView!.insertItemsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)])
+                    } else {
+                        fallthrough
                     }
                 default:
                     print(response)
@@ -69,36 +74,24 @@ class HomeViewController : UICollectionViewController {
     }
     
     private func loadWallets() {
-        let endpoint = "https://api.snapcard.io/v2/wallets"
-        let url = "\(endpoint)?timestamp=\(createTimestamp())"
+        let url = "\(endpoint)?timestamp=\(Utilities.createTimestamp())&limit=100&offset=0"
         Alamofire.request(.GET, url,
             parameters: nil,
             encoding: .JSON,
-            headers: getHeaders(url, body: ""))
+            headers: Utilities.getHeaders(url, body: ""))
             .responseJSON { response -> Void in
                 switch response.result {
                 case .Success:
                     if let apiResponse = response.result.value {
                         let data = apiResponse["data"] as! [[String : AnyObject]]
                         self.wallets = data
-                        self.collectionView?.reloadData()
+                        self.collectionView!.reloadData()
+                    } else {
+                        fallthrough
                     }
                 default:
                     print(response)
                 }
         }
-    }
-    
-    private func createTimestamp() -> String {
-        return "\(Int(NSDate().timeIntervalSince1970 * 1000))"
-    }
-    
-    private func getHeaders(url : String, body : String) -> [String : String] {
-        if let path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist"), dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-            let signature = "\(url)\(body)".hmac(.SHA256, key: dict["SNAPCARD_SECRET"] as! String)
-            let apiKey = dict["SNAPCARD_API_KEY"] as! String
-            return ["X-Api-Key": apiKey, "X-Api-Signature": signature]
-        }
-        return [:]
     }
 }

@@ -1,11 +1,3 @@
-//
-//  String+hmac.swift
-//  WalletGenApp
-//
-//  Created by Daniel Thengvall on 11/18/15.
-//  Copyright © 2015 SNAPCARD. All rights reserved.
-//
-
 import Foundation
 
 enum CryptoAlgorithm {
@@ -47,13 +39,9 @@ extension String {
         let result = UnsafeMutablePointer<CUnsignedChar>.alloc(digestLen)
         let keyStr = key.cStringUsingEncoding(NSUTF8StringEncoding)
         let keyLen = Int(key.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
-        
         CCHmac(algorithm.HMACAlgorithm, keyStr!, keyLen, str!, strLen, result)
-        
         let digest = stringFromResult(result, length: digestLen)
-        
         result.dealloc(digestLen)
-        
         return digest
     }
     
