@@ -15,6 +15,7 @@
 		A3A78C951BFD1F69006E7C71 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A78C941BFD1F69006E7C71 /* HomeViewController.swift */; };
 		A3A78C971BFD22BD006E7C71 /* WalletInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A78C961BFD22BD006E7C71 /* WalletInfoViewController.swift */; };
 		A3A78C991BFD36EB006E7C71 /* String+hmac.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A78C981BFD36EB006E7C71 /* String+hmac.swift */; };
+		A3A78C9C1BFE51A8006E7C71 /* WalletInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A78C9B1BFE51A8006E7C71 /* WalletInfoCell.swift */; };
 		A61F26828C005FE91E854DF8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C0D9769815D9C11CCC9273 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		A3A78C961BFD22BD006E7C71 /* WalletInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletInfoViewController.swift; sourceTree = "<group>"; };
 		A3A78C981BFD36EB006E7C71 /* String+hmac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+hmac.swift"; sourceTree = "<group>"; };
 		A3A78C9A1BFD3713006E7C71 /* WalletGenApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WalletGenApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		A3A78C9B1BFE51A8006E7C71 /* WalletInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletInfoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				A3A78C9A1BFD3713006E7C71 /* WalletGenApp-Bridging-Header.h */,
 				A3A78C981BFD36EB006E7C71 /* String+hmac.swift */,
 				A374C1971BFD63F5001CC957 /* Utilities.swift */,
+				A3A78C9B1BFE51A8006E7C71 /* WalletInfoCell.swift */,
 			);
 			path = WalletGenApp;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			files = (
 				A3A78C831BFD1E5C006E7C71 /* AppDelegate.swift in Sources */,
 				A3A78C971BFD22BD006E7C71 /* WalletInfoViewController.swift in Sources */,
+				A3A78C9C1BFE51A8006E7C71 /* WalletInfoCell.swift in Sources */,
 				A3A78C951BFD1F69006E7C71 /* HomeViewController.swift in Sources */,
 				A374C1981BFD63F5001CC957 /* Utilities.swift in Sources */,
 				A3A78C991BFD36EB006E7C71 /* String+hmac.swift in Sources */,

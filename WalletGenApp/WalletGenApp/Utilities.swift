@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class Utilities {
     
@@ -13,5 +13,17 @@ class Utilities {
             return ["X-Api-Key": apiKey, "X-Api-Signature": signature]
         }
         return [:]
+    }
+    
+    static func toQrImage(uri : String, height : CGFloat) -> UIImage {
+        let qrCodeData = uri.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
+        let qrCodeFilter = CIFilter(name: "CIQRCodeGenerator")
+        qrCodeFilter!.setValue(qrCodeData, forKey: "inputMessage")
+        qrCodeFilter!.setValue("Q", forKey: "inputCorrectionLevel")
+        let qrCode = qrCodeFilter!.outputImage
+        let qrCodeScaleX = height / qrCode!.extent.size.width
+        let qrCodeScaleY = height / qrCode!.extent.size.height
+        let adjustedCode = qrCode!.imageByApplyingTransform(CGAffineTransformMakeScale(qrCodeScaleX, qrCodeScaleY))
+        return UIImage(CIImage: adjustedCode)
     }
 }
