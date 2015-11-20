@@ -1,5 +1,5 @@
 # Wallet Generator for iOS
-Easily create and manage new bitcoin wallets
+An example implementation of the SNAPCARD Master Wallet Api
 
 - [Running the app](#running-the-app)
 - [About the code](#about-the-code)
@@ -17,7 +17,8 @@ Easily create and manage new bitcoin wallets
     * `$ pod update`  
 - Open `wallet-gen-ios/WalletGenApp/WalletGenApp.xcworkspace`
     * __NOTE__ ensure that you open the file ending in `*.xcworkspace` not the `*.xcodeproj` file  
-- In the `Info.plist` file update the __SNAPCARD_API_KEY__ and __SNAPCARD_SECRET__ with your credentials. Api keys can be generated [here](https://www.snapcard.io/wallet/settings#!/api)
+- In the `Info.plist` file update the __SNAPCARD_API_KEY__ and __SNAPCARD_SECRET__ with your credentials
+    * __NOTE__ api keys can be generated [here](https://www.snapcard.io/wallet/settings#!/api)
 
 ![](https://s3.amazonaws.com/uploads.hipchat.com/100175/1171589/aUPD2Y560qoVNKh/update-plist.png)
 
