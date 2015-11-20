@@ -30,7 +30,7 @@ An example implementation of the SNAPCARD Master Wallet Api
 - [Creating a wallet](#creating-a-wallet)
 - [Displaying wallets](#displaying-wallets)
 
-![](https://s3.amazonaws.com/uploads.hipchat.com/100175/1171589/ggI1mYA1m9vEIWs/wallet-gen.png)
+![](https://s3.amazonaws.com/uploads.hipchat.com/100175/1171589/AeudUX1iTvdkThg/Untitled-1.png)
 
 
 #### HomeViewController.swift

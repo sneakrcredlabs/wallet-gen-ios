@@ -43,7 +43,7 @@ class HomeViewController : UICollectionViewController {
     // MARK: Actions
     
     @IBAction func onAddButtonSelected(sender: AnyObject) {
-        createWallet("wallet #\(wallets.count)")
+        createWallet("wallet #\(wallets.count + 1)")
     }
     
     
