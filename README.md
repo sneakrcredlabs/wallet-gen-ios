@@ -40,9 +40,9 @@ An example implementation of the SNAPCARD Master Wallet Api
 
 #### Authentication
 
-  - The SNAPCARD Master Wallet Api requires both an api key and a signature in order to perform successful requests. [Api Documentation](http://wallets.docs.snapcard.io/docs/authentication)
+  - The SNAPCARD Master Wallet Api requires both an api key and a signature in order to perform successful requests. [Api Documentation](http://wallets.docs.snapcard.io/docs/authentication) 
 
-  - In this application the calculation of the signature is performed by a method in [Utilities.swift](https://github.com/snapcard/wallet-gen-ios/blob/develop/WalletGenApp/WalletGenApp/Utilities.swift)
+  - In this application the calculation of the signature is performed by this method:
 
     ````swift
     static func getHeaders(url : String, body : String) -> [String : String] {
@@ -54,7 +54,7 @@ An example implementation of the SNAPCARD Master Wallet Api
         return [:]
     }
     ````
-    [Utilities.swift:9](https://github.com/snapcard/wallet-gen-ios/blob/develop/WalletGenApp/WalletGenApp/Utilities.swift#L9)
+    [Utilities.swift:9](https://github.com/snapcard/wallet-gen-ios/blob/develop/WalletGenApp/WalletGenApp/Utilities.swift#L9) - [Api Documentation](http://wallets.docs.snapcard.io/docs/authentication)
 
 
 #### Creating a wallet
