@@ -3,7 +3,7 @@ import Alamofire
 
 class HomeViewController : UICollectionViewController {
     
-    private let endpoint = "https://api.snapcard.io/v2/wallets"
+    private let endpoint = "https://api.snapcard.io/v2"
     
     var wallets = [[String : AnyObject]]()
     
@@ -51,7 +51,7 @@ class HomeViewController : UICollectionViewController {
     
     private func createWallet(name : String) {
         let body = "{\"name\":\"\(name)\"}"
-        let url = "\(endpoint)?timestamp=\(Utilities.createTimestamp())"
+        let url = "\(endpoint)/wallets?timestamp=\(Utilities.createTimestamp())"
         Alamofire.request(.POST, url,
             parameters: ["name":name],
             encoding: .JSON,
@@ -70,7 +70,7 @@ class HomeViewController : UICollectionViewController {
     }
     
     private func loadWallets() {
-        let url = "\(endpoint)?timestamp=\(Utilities.createTimestamp())&limit=100&offset=0"
+        let url = "\(endpoint)/wallets?timestamp=\(Utilities.createTimestamp())&limit=100&offset=0"
         Alamofire.request(.GET, url,
             parameters: nil,
             encoding: .JSON,
