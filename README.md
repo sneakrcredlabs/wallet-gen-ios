@@ -4,6 +4,7 @@ An example implementation of the SNAPCARD Master Wallet Api
 - [Running the app](#running-the-app)
 - [About the code](#about-the-code)
 - [Third Party Libraries](#third-party-libraries)
+- [License](#license)
 
 
 ## Running the app
@@ -40,7 +41,7 @@ An example implementation of the SNAPCARD Master Wallet Api
 
 #### Authentication
 
-  - The SNAPCARD Master Wallet Api requires both an api key and a signature in order to perform successful requests. [Api Documentation](http://wallets.docs.snapcard.io/docs/authentication) 
+  - The SNAPCARD Master Wallet Api requires both an api key and a signature in order to perform successful requests. [Api Documentation](http://wallets.docs.snapcard.io/docs/authentication)
 
   - In this application the calculation of the signature is performed by this method:
 
@@ -115,3 +116,8 @@ An example implementation of the SNAPCARD Master Wallet Api
 ## Third Party Libraries
 
 - [Alamofire](https://github.com/Alamofire/Alamofire)
+
+
+## License
+
+WalletGenApp is available under the MIT license. See the LICENSE file for more info.
