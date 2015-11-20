@@ -56,19 +56,15 @@ class HomeViewController : UICollectionViewController {
             parameters: ["name":name],
             encoding: .JSON,
             headers: Utilities.getHeaders(url, body: body))
-            .validate()
             .responseJSON { response in
-                switch response.result {
-                case .Success:
-                    if let apiResponse = response.result.value {
-                        let newWallet = apiResponse as! [String : AnyObject]
+                if let apiResponse = response.result.value as? [String : AnyObject] {
+                    if apiResponse["exceptionId"] as? String == nil {
+                        let newWallet = apiResponse
                         self.wallets.insert(newWallet, atIndex: 0)
                         self.collectionView!.insertItemsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)])
-                    } else {
-                        fallthrough
+                        return
                     }
-                default:
-                    print(response)
+                    self.onApiError(apiResponse)
                 }
         }
     }
@@ -80,18 +76,24 @@ class HomeViewController : UICollectionViewController {
             encoding: .JSON,
             headers: Utilities.getHeaders(url, body: ""))
             .responseJSON { response -> Void in
-                switch response.result {
-                case .Success:
-                    if let apiResponse = response.result.value {
+                if let apiResponse = response.result.value as? [String : AnyObject] {
+                    if apiResponse["exceptionId"] as? String == nil {
                         let data = apiResponse["data"] as! [[String : AnyObject]]
                         self.wallets = data
                         self.collectionView!.reloadData()
-                    } else {
-                        fallthrough
+                        return
                     }
-                default:
-                    print(response)
+                    self.onApiError(apiResponse)
                 }
         }
+    }
+    
+    private func onApiError(apiResponse : [String : AnyObject]) {
+        let alert = UIAlertController(title: NSLocalizedString("An error has occurred", comment: ""), message: apiResponse["message"] as? String, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertActionStyle.Cancel) { action in
+            alert.dismissViewControllerAnimated(true) { () in }
+        })
+        self.presentViewController(alert, animated: true) { () in }
+        print(apiResponse)
     }
 }
